@@ -1,0 +1,27 @@
+<section>
+
+  <h2 class="titulo">Visualizar Transferencias</h2>
+  <table class="tabela">
+
+    <thead class="tabela__cabecalho">
+      <th class="tabela__cabecalho__conteudo">Data</th>
+      <th class="tabela__cabecalho__conteudo">Valor</th>
+      <th class="tabela__cabecalho__conteudo">Destino</th>
+    </thead>
+
+    <tbody *ngIf="transferencia_extrato?.length > 0  else ListaVazia">
+      <!-- se tiver algo dentro de transferencia, faça isso: Senão, utilize o template ListaVazia-->
+      <tr class="tabela__linha" *ngFor="let i of transferencia_extrato">
+        <td class="tabela__conteudo"> {{i.data | date: 'short'}} </td>
+        <td class="tabela__conteudo"> {{i.valor | currency}} </td>
+        <td class="tabela__conteudo"> {{i.destino}} </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Conteudo que será substituido pelo tbody caso a condição do if não seja verdadeira ! -->
+
+  <ng-template #ListaVazia>
+    <p>Nenhuma operação cadastrada</p>
+  </ng-template>
+</section>

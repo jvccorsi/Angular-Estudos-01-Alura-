@@ -1,0 +1,29 @@
+<!--
+  Exermplo com emit:
+  <app-nova-transferencia (aoTransferir)="transferir($event)"> </app-nova-transferencia> -->
+
+
+
+
+<!--
+  Utilziar o router-outlet para invocar os elementos:
+
+  <app-nova-transferencia> </app-nova-transferencia>
+
+<app-extrato> </app-extrato> -->
+
+<!-- Define as rotas -->
+
+<header>
+  <a routerLink="extrato"> Visualizar</a>
+  <a routerLink="nova-transferencia" routerLinkActive="ativo"> Cadastrar</a>
+
+  <!-- routerLinkActive -> Quando tiver nessa rota, ele exibe ou remove alguma classe css -->
+</header>
+
+<main>
+
+  <router-outlet></router-outlet>
+
+</main>
+<!-- Define as rotas -->
